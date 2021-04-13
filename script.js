@@ -11,7 +11,7 @@ Buon lavoro! :faccia_leggermente_sorridente: */
 
 
 
-//prompt cognome 
+
 
 
 
@@ -25,14 +25,16 @@ var surname_list = [
 "Gialli"
 ]
 
+//prompt cognome 
+
 var surname = prompt("inserisci il tuo cognome")
 
-
+// stampa la lista in ordine alfabetico
 
 surname_list.push(surname);
 surname_list.sort();
 
-var presente = false;
+
 
 
 for(var i = 0; i < surname_list.length; i++){
@@ -41,19 +43,30 @@ for(var i = 0; i < surname_list.length; i++){
 
   var contenuto_precedente = document.getElementById("surnames").innerHTML;
 
-  document.getElementById("surnames").innerHTML = contenuto_precedente + "<li>" +element_surname+ "</li>";
+  document.getElementById("surnames").innerHTML = contenuto_precedente + "<li>" + (i+1) +element_surname+ "</li>";
 
-  if(element_surname === surname){
-    console.log(surname_list.indexOf(surname, 1));
+  // scrivi la posizione della lista in cui il nome dell'utente si trova
+
+
+  if (element_surname === surname) {
+    document.getElementById("surnames").innerHTML = contenuto_precedente +  "<li> N. " + (i+1) + ": " + element_surname + "</li>"
+   
+  } else {
+    document.getElementById("surnames").innerHTML = contenuto_precedente +  "<li>" + element_surname + "</li>";
   }
-}
+
+  }
 
 
 
 
 
 
-// stampa la lista in ordine alfabetico
 
-// scrivi la posizione della lista in cui il nome dell'utente si trova
+
+
+
+
+
+
 
